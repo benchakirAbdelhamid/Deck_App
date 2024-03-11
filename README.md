@@ -1,0 +1,1 @@
+Application MERN STACK (express & react & node & mongoDB) with typescript
