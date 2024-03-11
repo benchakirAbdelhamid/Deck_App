@@ -1,0 +1,52 @@
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.decks{
+    display: grid;
+    width: 600px;
+    margin:  0 auto;
+    margin-top: 50px;
+    grid-template-columns: repeat(3 , 1fr);
+    /* border: 1px solid rgba(0, 0, 0, 0.377); */
+    /* gap: 10px; */
+    grid-gap: 10px;
+}
+.decks li{
+    border: 1px solid rgba(53, 29, 96, 0.688);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    gap: 10px;
+    position: relative;
+}
+.decks li button{
+    position: absolute;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+.decks li .btn-delete{
+    top: 1px;
+    right: 1px;
+}
+.decks li .btn-details{
+    top: 1px;
+    left: 1px;
+}
+
+nav ul {
+    list-style: none;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    padding: 10px;
+}
