@@ -4,15 +4,15 @@ import { createCard } from "../api/createCard";
 import toast, { Toaster } from "react-hot-toast";
 import { getDeck } from "../api/getDeck";
 
-type TpDeck = {
-  title: string;
-  cards: string[];
-  _id: string;
-};
+interface DeckType {
+  _id?: string;
+  title?: string;
+  cards?: any[] | undefined;
+}
 
 const Deck = () => {
   const [text, setText] = useState("");
-  const [deck, setDeck] = useState<TpDeck[]>([]);
+  const [deck, setDeck] = useState<DeckType>({});
   let { deckId } = useParams();
 
   async function handleCreateDeck(e: React.FormEvent) {
@@ -58,7 +58,16 @@ const Deck = () => {
       <hr />
       Details :
       <br />
-      {/* title : {deck.title} */}
+      id : {deck._id}
+      <br />
+      title : {deck.title}
+      <br />
+      cards
+      {/* {JSON.stringify(deck.cards)} */}
+      {deck.cards?.length as number  > 0
+        ? deck.cards?.map((item, i) => <p key={i}>{item}</p>)
+        : ""}
+      {/* {deck.cards.map((item,i) =>( <p key={i}>{item}</p> ))} */}
     </div>
   );
 };
